@@ -1,6 +1,6 @@
 from setuptools import setup, find_packages
 
-setup(name='sideloader',
+setup(name='sideloader.build',
       version='2.0a0',
       description='Sideloader',
       classifiers=[
