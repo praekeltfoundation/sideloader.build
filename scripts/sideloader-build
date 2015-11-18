@@ -1,6 +1,6 @@
 import click
 
-from sideloader import Sideloader
+from sideloader.build import Sideloader
 
 
 @click.command()

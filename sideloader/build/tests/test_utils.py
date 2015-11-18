@@ -1,4 +1,4 @@
-from sideloader.utils import args_str, create_venv_paths
+from sideloader.build.utils import args_str, create_venv_paths
 
 
 def test_args_str_string_list():

@@ -18,6 +18,7 @@ setup(name='sideloader',
           'click',
           'PyYAML',
       ],
+      scripts=['scripts/sideloader-build'],
       entry_points={
           'console_scripts': ['sideloader = sideloader.cli:main'],
       })

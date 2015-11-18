@@ -2,9 +2,9 @@ import os
 
 import pytest
 
-from sideloader import Build, Deploy, GitRepo, Package, Workspace
-from sideloader.config_files import ConfigFiles
-from sideloader.deploy_types import DeployType
+from sideloader.build import Build, Deploy, GitRepo, Package, Workspace
+from sideloader.build.config_files import ConfigFiles
+from sideloader.build.deploy_types import DeployType
 
 
 class TestGitRepo(object):
