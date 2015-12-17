@@ -5,9 +5,10 @@ python:
   - "pypy"
 cache:
   directories:
-    - $HOME/.pip-cache/
+    - $HOME/.cache/pip
 
 install:
+  - pip install 'pip>=7.1.2'
   - pip install coveralls
   - pip install -r requirements-dev.txt
   - pip install -e .
