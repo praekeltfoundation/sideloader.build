@@ -7,9 +7,6 @@ cache:
   directories:
     - $HOME/.pip-cache/
 
-env:
-  - TZ=UTC
-
 install:
   - pip install coveralls
   - pip install -r requirements-dev.txt
