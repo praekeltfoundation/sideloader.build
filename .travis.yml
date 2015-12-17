@@ -3,8 +3,9 @@ language: python
 matrix:
   include:
     - python: "2.7"
+    # Disable coverage tests for pypy as they'll always be the same as CPython
     - python: "pypy"
-      env: PYPY_VERSION="4.0.1"
+      env: PYPY_VERSION="4.0.1" NO_COVERAGE=1
 
 cache:
   directories:
@@ -23,7 +24,8 @@ install:
 
 script:
   - flake8 sideloader
-  - py.test --cov=sideloader --cov-report=term
+  - if [ -z "$NO_COVERAGE" ]; then COVERAGE_OPTS="--cov=sideloader --cov-report=term"; else COVERAGE_OPTS=""; fi
+  - py.test $COVERAGE_OPTS sideloader
 
 after_success:
-  - coveralls
+  - if [ -z "$NO_COVERAGE" ]; then coveralls; fi
