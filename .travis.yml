@@ -2,10 +2,21 @@ sudo: false
 language: python
 python:
   - "2.7"
-  - "pypy"
+
+matrix:
+  include:
+    - python: "2.7"
+    - python: "pypy"
+      env: PYPY_VERSION="4.0.1"
+
 cache:
   directories:
     - $HOME/.cache/pip
+
+before_install:
+  # If necessary, set up an appropriate version of pypy.
+  - if [ ! -z "$PYPY_VERSION" ]; then source utils/setup-pypy-travis.sh; fi
+  - if [ ! -z "$PYPY_VERSION" ]; then python --version 2>&1 | fgrep "PyPy $PYPY_VERSION"; fi
 
 install:
   - pip install 'pip>=7.1.2'
