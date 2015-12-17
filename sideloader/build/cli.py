@@ -18,7 +18,8 @@ from .sideloader import Sideloader
               type=click.Choice(['dir', 'python', 'virtualenv']))
 @click.option('--packman', help='Package manager', default='deb',
               type=click.Choice(['deb', 'rpm']))
-@click.option('--config', help='Sideloader config', default='/etc/sideloader/sideloader.yaml',
+@click.option('--config', help='Sideloader config',
+              default='/etc/sideloader/sideloader.yaml',
               type=click.Path())
 @click.option('--debug/--no-debug', help='Log additional debug information',
               default=False)
